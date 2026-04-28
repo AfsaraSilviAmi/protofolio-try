@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
+@theme {
+  /* Custom Colors */
+  --color-surface-dim: #0f0b3c;
+  --color-on-primary-fixed-variant: #5a00c6;
+  --color-primary-fixed: #eaddff;
+  --color-tertiary-fixed-dim: #2fd9f4;
+  --color-surface-container-highest: #312f5f;
+  --color-on-primary-fixed: #25005a;
+  --color-on-primary-container: #ede0ff;
+  --color-on-surface: #e3dfff;
+  --color-on-surface-variant: #ccc3d8;
+  --color-on-secondary: #381385;
+  --color-surface-bright: #363364;
+  --color-tertiary: #2fd9f4;
+  --color-inverse-on-surface: #2d2a5b;
+  --color-secondary-fixed: #e8ddff;
+  --color-outline: #958da1;
+  --color-secondary-container: #4f319c;
+  --color-error: #ffb4ab;
+  --color-primary: #d2bbff;
+  --color-tertiary-container: #007181;
+  --color-surface-container-high: #262454;
+  --color-on-tertiary-fixed-variant: #004e5a;
+  --color-surface-variant: #312f5f;
+  --color-on-secondary-container: #bea8ff;
+  --color-surface: #0f0b3c;
+  --color-surface-container-low: #181445;
+  --color-surface-tint: #d2bbff;
+  --color-surface-container-lowest: #0a0538;
+  --color-on-tertiary: #00363e;
+  --color-on-primary: #3f008e;
+  --color-tertiary-fixed: #a2eeff;
+  --color-primary-container: #7c3aed;
+  --color-secondary-fixed-dim: #cebdff;
+  --color-background: var(--bg-color);
+  --color-on-error: #690005;
+  --color-on-tertiary-container: #aef0ff;
+  --color-on-background: var(--text-color);
+  --color-inverse-surface: #e3dfff;
+  --color-on-secondary-fixed-variant: #4f319c;
+  --color-outline-variant: #4a4455;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-secondary: #cebdff;
+  --color-on-secondary-fixed: #21005e;
+  --color-inverse-primary: #732ee4;
+  --color-surface-container: var(--card-bg);
+  --color-primary-fixed-dim: #d2bbff;
+  --color-on-tertiary-fixed: #001f25;
+
+  /* Fonts */
+  --font-body: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: #ffffff;
+  --text-color: #25005a;
+  --card-bg: #f8f7ff;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(124, 58, 237, 0.1);
+  --hero-glow-1: rgba(210, 187, 255, 0.15);
+  --hero-glow-2: rgba(162, 238, 255, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg-color: #0a051a;
+  --text-color: #f8f7ff;
+  --card-bg: #14112e;
+  --glass-bg: rgba(20, 17, 46, 0.8);
+  --glass-border: rgba(124, 58, 237, 0.3);
+  --hero-glow-1: rgba(124, 58, 237, 0.25);
+  --hero-glow-2: rgba(47, 217, 244, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body transition-colors duration-500;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: background 0.5s, border 0.5s;
+  }
+  
+  .hero-gradient {
+    background: radial-gradient(circle at 80% 20%, var(--hero-glow-1) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, var(--hero-glow-2) 0%, transparent 40%);
+    transition: background 0.5s;
+  }
+
+  /* Typography Utilities */
+  .text-h1 {
+    @apply text-6xl font-bold leading-[1.1] tracking-tight md:text-7xl;
+  }
+
+  .text-h2 {
+    @apply text-4xl font-semibold leading-tight tracking-tight md:text-5xl;
+  }
+
+  .text-h3 {
+    @apply text-2xl font-semibold leading-snug md:text-3xl;
+  }
+
+  .text-body-lg {
+    @apply text-lg leading-relaxed md:text-xl;
+  }
+
+  .text-body-md {
+    @apply text-base leading-normal;
+  }
+
+  .text-label-caps {
+    @apply text-xs font-bold tracking-widest uppercase;
+  }
+
+  /* Animation Utilities */
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(124, 58, 237, 0) 0%,
+      rgba(124, 58, 237, 0.4) 50%,
+      rgba(124, 58, 237, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
