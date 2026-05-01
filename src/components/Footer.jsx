@@ -7,7 +7,7 @@ import { useTheme } from "./ThemeProvider";
 export default function Footer() {
   const { theme } = useTheme();
   const socials = [
-    { name: "LinkedIn", href: "www.linkedin.com/in/afsara-silvi-ami" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/afsara-silvi-ami" },
     { name: "GitHub", href: "https://github.com/AfsaraSilviAmi" },
     
   ];

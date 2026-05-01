@@ -100,7 +100,7 @@ export default function Hero() {
           <div className="flex gap-10 pt-4">
             {[
               { icon: "terminal", name: "GitHub", href: "https://github.com/AfsaraSilviAmi" },
-              { icon: "language", name: "LinkedIn", href: "www.linkedin.com/in/afsara-silvi-ami" },
+              { icon: "language", name: "LinkedIn", href: "https://www.linkedin.com/in/afsara-silvi-ami" },
               
             ].map((social) => (
               <motion.a
