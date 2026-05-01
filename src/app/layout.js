@@ -8,8 +8,10 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Professional Portfolio | Senior Systems Architect",
-  description: "Engineering elegance through code. Specializing in high-performance distributed systems and human-centric interface design.",
+  title: "Portfolio | Afsara Silvi Ami",
+  icons: {
+    icon: "/logo2.png", 
+  },
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
