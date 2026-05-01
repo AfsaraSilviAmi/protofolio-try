@@ -41,7 +41,7 @@ export default function NavBar() {
       >
         <Link href="/" className="relative w-32 h-16 transition-transform duration-500 group-hover:scale-110">
           <Image 
-            src="/logo.png" 
+            src="/logo2.png" 
             alt="ASA Logo" 
             fill 
             className={`object-contain transition-all duration-500 ${

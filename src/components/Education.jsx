@@ -33,30 +33,30 @@ export default function Education() {
 
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Stanford University",
-      period: "2013 — 2015",
-      details: "Specialized in Distributed Systems and Artificial Intelligence. Graduated with Honors. Developed a thesis on low-latency consensus algorithms.",
+      degree: "BSc Honors in Computer Science and Engineering",
+      school: "Mohammadpur Central University (under National University)",
+      period: "2020-2026",
+     details: "Focused on core computer science subjects including programming, data structures, databases, and software engineering. Gained hands-on experience through academic projects and web development practice.",
       active: true
     },
     {
-      degree: "Bachelor of Engineering in Software Engineering",
-      school: "MIT",
-      period: "2009 — 2013",
-      details: "Dean's List for all 4 years. Focused on algorithmic complexity and system design. Lead developer for the university's open-source student portal.",
+      degree: "HSC in Science",
+      school: "Mohammadpur Preparatory School & College (Dhaka Board)",
+      period: "2017-2019",
+      details: "Completed Higher Secondary Education in Science group with focus on Mathematics, Physics, and ICT. Built a strong foundation in analytical thinking and problem-solving.",
       active: false
     },
     {
-      degree: "Advanced Higher Secondary Certificate",
-      school: "Science Academy",
-      period: "2007 — 2009",
-      details: "Top 1% in Mathematics and Physics. Awarded the Presidential Scholarship for Academic Excellence.",
+      degree: "SSC in Science",
+      school: "Mohammadpur Preparatory School & College (Dhaka Board)",
+      period: "2016-2017",
+      details: "Completed Secondary School Certificate (SSC) in Science group with focus on Mathematics, Physics, and General Science. Built foundational academic knowledge and problem-solving skills.",
       active: false
     }
   ];
 
   return (
-    <section ref={containerRef} className="py-xl px-8 md:px-20 bg-surface-container overflow-hidden" id="education">
+    <section ref={containerRef} className="py-20 px-8 md:px-20 bg-surface-container" id="education">
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <motion.div
@@ -65,8 +65,8 @@ export default function Education() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-h2 text-on-background sticky top-32">Educational Qualification</h2>
-            <p className="text-slate-500 text-body-md mt-4 sticky top-48">A journey through rigorous academic training and specialized engineering research.</p>
+            <h2 className="text-h2 text-on-background">Educational Qualification</h2>
+            <p className="text-slate-500 text-body-md mt-4">A journey through my academic studies and learning in computer science.</p>
           </motion.div>
           
           <div className="lg:col-span-2 space-y-12 relative">

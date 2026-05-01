@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
-    <section className="py-xl px-8 md:px-20 bg-background overflow-hidden" id="projects">
+    <section className="py-20 px-8 md:px-20 bg-background overflow-hidden" id="projects">
       <div className="max-w-screen-xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -15,8 +15,8 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-h2 text-on-background mb-4">Featured Projects</h2>
-          <p className="text-slate-500 dark:text-slate-400 text-body-lg max-w-2xl">Engineering solutions for complex problems. Here are some of the technical challenges I&apos;ve solved recently.</p>
+          <h2 className="text-h2 text-on-background mb-4 text-center">Featured Projects</h2>
+          <p className="text-slate-500 dark:text-slate-400 text-body-lg max-w-2xl text-center mx-auto">These are some of the projects I’ve built as part of my learning journey.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -31,13 +31,13 @@ export default function Projects() {
               className="glass-card rounded-[2.5rem] overflow-hidden flex flex-col group border border-violet-100 dark:border-white/10 hover:border-violet-300 dark:hover:border-violet-700/50 transition-colors shadow-sm hover:shadow-xl dark:shadow-none"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
-                <Image 
-                  src={project.image} 
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+               <Image 
+  src={project.image} 
+  alt={project.title}
+  fill
+  className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+/>
               </div>
               
               <div className="p-8 flex flex-col flex-1">

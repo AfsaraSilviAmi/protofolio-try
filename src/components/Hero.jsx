@@ -79,7 +79,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <motion.a 
               href="#projects"
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: -1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary-container text-white px-10 py-5 rounded-2xl text-label-caps font-bold shadow-xl shadow-violet-200 dark:shadow-violet-900/20 flex items-center justify-center gap-2"
             >

@@ -7,10 +7,9 @@ import { useTheme } from "./ThemeProvider";
 export default function Footer() {
   const { theme } = useTheme();
   const socials = [
-    { name: "LinkedIn", href: "#" },
-    { name: "GitHub", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Facebook", href: "#" },
+    { name: "LinkedIn", href: "www.linkedin.com/in/afsara-silvi-ami" },
+    { name: "GitHub", href: "https://github.com/AfsaraSilviAmi" },
+    
   ];
 
   return (
@@ -18,11 +17,11 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="w-full py-12 px-10 flex flex-col md:flex-row justify-between items-center gap-8 bg-background border-t border-violet-100 dark:border-violet-900/30 font-display text-sm tracking-wide uppercase transition-colors duration-500"
+      className="w-full mt-10 py-12 px-10 flex flex-col md:flex-row justify-between items-center gap-8 bg-background border-t border-violet-100 dark:border-violet-900/30 font-display text-sm tracking-wide uppercase transition-colors duration-500"
     >
       <div className="relative w-32 h-16">
         <Image 
-          src="/logo.png" 
+          src="/logo2.png" 
           alt="ASA Logo" 
           fill 
           className={`object-contain transition-all duration-500 ${
@@ -32,7 +31,7 @@ export default function Footer() {
           }`}
         />
       </div>
-      <div className="text-slate-500 dark:text-slate-400 font-medium text-center">© {new Date().getFullYear()} TECHNICAL PORTFOLIO. ALL RIGHTS RESERVED.</div>
+      <div className="text-slate-500 dark:text-slate-400 font-medium text-center">© {new Date().getFullYear()} PORTFOLIO of Afsara Silvi Ami. ALL RIGHTS RESERVED.</div>
       <div className="flex items-center gap-6">
         {socials.map((social) => (
           <motion.a 

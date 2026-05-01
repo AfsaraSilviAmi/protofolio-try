@@ -10,94 +10,103 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-screen-xl mx-auto moving-gradient rounded-[3rem] p-12 md:p-20 text-white flex flex-col md:flex-row items-center gap-16 overflow-hidden relative shadow-2xl"
+        className="
+        max-w-screen-xl mx-auto rounded-[3rem] p-12 md:p-20
+        bg-gradient-to-br from-violet-600 to-purple-700
+        dark:from-violet-900 dark:to-purple-950
+        text-white flex flex-col md:flex-row items-center gap-16
+        overflow-hidden relative shadow-2xl"
       >
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-full h-full bg-black/10 backdrop-blur-[2px]"></div>
-        
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10 dark:bg-black/30"></div>
+
+        {/* LEFT */}
         <div className="flex-1 relative z-10">
-          <motion.h2 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-h2 mb-6"
-          >
-            Ready to build the future together?
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-body-lg text-white/90 mb-8"
-          >
-            Currently accepting select consulting engagements and senior leadership opportunities. Let&apos;s discuss your next breakthrough.
-          </motion.p>
-          <div className="space-y-4">
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="flex items-center gap-4 group cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-white/80 group-hover:scale-110 transition-transform">mail</span>
-              <span className="text-body-md">hello@technicalportfolio.com</span>
-            </motion.div>
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="flex items-center gap-4 group cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-white/80 group-hover:scale-110 transition-transform">call</span>
-              <span className="text-body-md">+1 (555) 123-4567</span>
-            </motion.div>
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="flex items-center gap-4 group cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-white/80 group-hover:scale-110 transition-transform">chat</span>
-              <span className="text-body-md">WhatsApp: +1 (555) 987-6543</span>
-            </motion.div>
-            <motion.div 
-              whileHover={{ x: 10 }}
-              className="flex items-center gap-4 group cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-white/80 group-hover:scale-110 transition-transform">location_on</span>
-              <span className="text-body-md">San Francisco, CA / Remote</span>
-            </motion.div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Let’s Connect & Build Something Cool 🚀
+          </h2>
+
+          <p className="text-white/90 text-lg mb-8">
+            I’m currently learning and building projects. Feel free to reach out for collaboration or feedback.
+          </p>
+
+          <div className="space-y-4 text-white/90">
+            {[
+              { icon: "mail", text: "afsarasilvi@gmail.com" },
+              { icon: "call", text: "01905643618" },
+              { icon: "chat", text: "WhatsApp: 01905643618" },
+              { icon: "location_on", text: "Bangladesh / Remote" }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ x: 8 }}
+                className="flex items-center gap-4 cursor-pointer"
+              >
+                {/* FIXED ICON VISIBILITY */}
+                <span className="material-symbols-outlined text-white text-xl drop-shadow-md">
+                  {item.icon}
+                </span>
+                <span className="text-base">{item.text}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
-        
-        <div className="flex-1 w-full relative z-10">
+
+        {/* RIGHT FORM */}
+        <div className="flex-1 relative z-10 w-full">
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <motion.input 
-                whileFocus={{ scale: 1.02 }}
-                className="bg-white/10 border-b border-white/30 border-t-0 border-x-0 focus:ring-0 focus:border-white text-white placeholder-white/60 p-4 rounded-lg transition-all outline-none backdrop-blur-sm" 
-                placeholder="Name" 
-                type="text"
+              <input
+                className="
+                w-full p-4 rounded-xl
+                bg-white/95 text-gray-900
+                placeholder-gray-500
+                focus:outline-none
+                shadow-sm"
+                placeholder="Your Name"
               />
-              <motion.input 
-                whileFocus={{ scale: 1.02 }}
-                className="bg-white/10 border-b border-white/30 border-t-0 border-x-0 focus:ring-0 focus:border-white text-white placeholder-white/60 p-4 rounded-lg transition-all outline-none backdrop-blur-sm" 
-                placeholder="Email" 
-                type="email"
+
+              <input
+                className="
+                w-full p-4 rounded-xl
+                bg-white/95 text-gray-900
+                placeholder-gray-500
+                focus:outline-none
+                shadow-sm"
+                placeholder="Your Email"
               />
             </div>
-            <motion.textarea 
-              whileFocus={{ scale: 1.02 }}
-              className="w-full bg-white/10 border-b border-white/30 border-t-0 border-x-0 focus:ring-0 focus:border-white text-white placeholder-white/60 p-4 rounded-lg transition-all outline-none backdrop-blur-sm" 
-              placeholder="Message" 
+
+            <textarea
+              className="
+              w-full p-4 rounded-xl
+              bg-white/95 text-gray-900
+              placeholder-gray-500
+              focus:outline-none
+              shadow-sm"
+              placeholder="Write your message..."
               rows="4"
-            ></motion.textarea>
-            <motion.button 
-              whileHover={{ 
-                scale: 1.02, 
-                backgroundColor: "#ffffff",
-                color: "#7c3aed",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-white/90 text-primary-container text-label-caps font-bold py-4 rounded-xl transition-all"
+            />
+
+            {/* FIXED BUTTON (ICON VISIBLE + DARK MODE GOOD) */}
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="
+              w-full flex items-center justify-center gap-3
+              bg-white text-violet-700
+              font-bold py-4 rounded-xl
+              shadow-lg hover:shadow-2xl
+              transition-all"
             >
-              Send Connection Request
+              <span className="material-symbols-outlined text-violet-700 text-xl">
+                mail
+              </span>
+              Send Message
             </motion.button>
+
           </form>
         </div>
       </motion.div>
