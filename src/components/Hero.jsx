@@ -47,7 +47,7 @@ export default function Hero() {
   
   return (
     <section ref={containerRef} className="relative min-h-[921px] flex items-center px-8 md:px-20 hero-gradient overflow-hidden" id="about">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center w-full">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-center w-full pb-10 lg:pb-0">
         <div className="space-y-8 hero-content">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}

@@ -10,7 +10,13 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "Portfolio | Afsara Silvi Ami",
   icons: {
-    icon: "/logo2.png", 
+   icon: [
+      {
+        url: "/logo2.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
   },
 };
 
