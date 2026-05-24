@@ -36,13 +36,16 @@ export default function Education() {
       degree: "BSc Honors in Computer Science and Engineering",
       school: "Mohammadpur Central University (under National University)",
       period: "2020-2026",
-     details: "Focused on core computer science subjects including programming, data structures, databases, and software engineering. Gained hands-on experience through academic projects and web development practice.",
+      gpa: "3.83 / 4.00",
+      isCGPA: true,
+      details: "Focused on core computer science subjects including programming, data structures, databases, and software engineering. Gained hands-on experience through academic projects and web development practice.",
       active: true
     },
     {
       degree: "HSC in Science",
       school: "Mohammadpur Preparatory School & College (Dhaka Board)",
       period: "2017-2019",
+      gpa: "4.58 / 5.00",
       details: "Completed Higher Secondary Education in Science group with focus on Mathematics, Physics, and ICT. Built a strong foundation in analytical thinking and problem-solving.",
       active: false
     },
@@ -50,6 +53,7 @@ export default function Education() {
       degree: "SSC in Science",
       school: "Mohammadpur Preparatory School & College (Dhaka Board)",
       period: "2016-2017",
+      gpa: "5.00 / 5.00",
       details: "Completed Secondary School Certificate (SSC) in Science group with focus on Mathematics, Physics, and General Science. Built foundational academic knowledge and problem-solving skills.",
       active: false
     }
@@ -92,7 +96,14 @@ export default function Education() {
                   <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
                     <div>
                       <h4 className="text-h3 text-on-background">{edu.degree}</h4>
-                      <div className="text-primary-container font-bold">{edu.school}</div>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                        <span className="text-primary-container font-bold">{edu.school}</span>
+                        {edu.gpa && (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800">
+                            {edu.isCGPA ? "CGPA" : "GPA"}: {edu.gpa}
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <div className="text-label-caps text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full whitespace-nowrap">{edu.period}</div>
                   </div>
