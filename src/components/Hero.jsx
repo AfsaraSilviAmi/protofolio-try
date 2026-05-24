@@ -30,7 +30,7 @@ export default function Hero() {
       });
 
       // Paragraph and buttons fade up
-      gsap.from(".hero-content > *", {
+      gsap.from(".hero-fade-in", {
         opacity: 0,
         y: 20,
         duration: 0.8,
@@ -73,20 +73,20 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p className="text-body-lg text-slate-600 dark:text-slate-300 max-w-xl">
+          <p className="text-body-lg text-slate-600 dark:text-slate-300 max-w-xl hero-fade-in">
            I'm an aspiring web developer passionate about building real-world applications. I enjoy working with modern technologies like React and Next.js, and I'm constantly learning to improve my skills through hands-on projects.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
             <motion.a 
               href="#projects"
-              whileHover={{ scale: -1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary-container text-white px-10 py-5 rounded-2xl text-label-caps font-bold shadow-xl shadow-violet-200 dark:shadow-violet-900/20 flex items-center justify-center gap-2"
             >
               View My Work
             </motion.a>
             <motion.a 
-              href="/afsara-silvi-cv.pdf"
+              href="/Afsara Silvi Ami_Resume.pdf"
               download
               whileHover={{ scale: 1.05, y: -2, backgroundColor: "var(--card-bg)" }}
               whileTap={{ scale: 0.95 }}
@@ -97,7 +97,7 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          <div className="flex gap-10 pt-4">
+          <div className="flex gap-10 pt-4 hero-fade-in">
             {[
               { icon: "terminal", name: "GitHub", href: "https://github.com/AfsaraSilviAmi" },
               { icon: "language", name: "LinkedIn", href: "https://www.linkedin.com/in/afsara-silvi-ami" },
