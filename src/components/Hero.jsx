@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
 const stats = [
-  { icon: "code", value: "5+", label: "Projects" },
+  { icon: "code", value: "10+", label: "Projects" },
   { icon: "school", value: "Learning", label: "Daily" },
   { icon: "bolt", value: "Fast", label: "Learner" },
   { icon: "emoji_objects", value: "Creative", label: "Mind" }
@@ -43,7 +43,7 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  const title = "Hi, I'm Afsara Silvi Ami an aspiring Web Developer";
+  const title = "Hi, I'm Afsara Silvi Ami, a MERN Stack Developer";
   
   return (
     <section ref={containerRef} className="relative min-h-[921px] flex items-center px-8 md:px-20 hero-gradient overflow-hidden" id="about">
@@ -54,7 +54,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-block px-4 py-1 rounded-full border border-violet-200 bg-violet-50 text-violet-700 text-label-caps"
           >
-           Aspiring Web Developer
+           MERN Stack Developer
           </motion.div>
           <h1 ref={titleRef} className="text-h1 text-on-background">
             {title.split(" ").map((word, i) => (
@@ -64,7 +64,7 @@ export default function Hero() {
                     key={j} 
                     className={`inline-block char 
   ${word === "Afsara" || word === "Silvi" || word === "Ami" ? "text-primary-container animate-shimmer" : ""} 
-  ${word === "Web" || word === "Developer" ? "text-primary-container animate-shimmer" : ""}
+  ${word === "MERN" || word === "Developer" ? "text-primary-container animate-shimmer" : ""}
 `}
                   >
                     {char}
@@ -74,7 +74,7 @@ export default function Hero() {
             ))}
           </h1>
           <p className="text-body-lg text-slate-600 dark:text-slate-300 max-w-xl hero-fade-in">
-           I'm an aspiring web developer passionate about building real-world applications. I enjoy working with modern technologies like React and Next.js, and I'm constantly learning to improve my skills through hands-on projects.
+           I'm a MERN Stack Developer who is passionate about building real-world applications. I enjoy working with modern technologies like Next.js and React, and I'm constantly learning to improve my skills through hands-on projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-in">
             <motion.a 
