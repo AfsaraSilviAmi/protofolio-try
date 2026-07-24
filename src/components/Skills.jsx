@@ -5,22 +5,26 @@ import { motion } from "framer-motion";
 export default function Skills() {
   const skills = {
     frontend: [
-      { name: "HTML / CSS", level: 80 },
-      { name: "JavaScript", level: 70 },
       { name: "React / Next.js", level: 80 },
-      { name: "Tailwind CSS", level: 85 }
+       { name: "JavaScript", level: 70 },
+         { name: "TypeScript", level: 65 },
+      { name: "HTML / CSS", level: 90 },
+      { name: "Tailwind CSS", level: 95 }
     ],
     backend: [
   { name: "Node.js / Express", level: 80 },
+   { name: "MongoDB", level: 90 }, 
+    { name: "REST APIs", level: 85 },
   { name: "PHP", level: 30 },
   { name: "MySQL", level: 20 },
-  { name: "MongoDB", level: 90 } 
+ 
 ],
     tools: [
   { name: "Git / GitHub", level: 75 },
   { name: "VS Code", level: 95 },
   { name: "Figma (Basic)", level: 60 },
-  { name: "BetterAuth (Basic)", level: 60 } 
+  { name: "BetterAuth (Basic)", level: 85 },
+   { name: "Vercel", level: 90 },
 ]
   };
 

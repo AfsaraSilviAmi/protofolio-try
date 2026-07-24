@@ -19,55 +19,32 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
-    
-    if (!key || key === "YOUR_ACCESS_KEY_HERE" || key.trim() === "") {
-      setStatus("error");
-      setErrorMessage("Please configure your Web3Forms Access Key in your .env.local file to enable email delivery. (Get a free key instantly at web3forms.com!)");
-      return;
-    }
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setStatus("error");
-      setErrorMessage("Please fill out all fields.");
-      return;
-    }
+  if (
+    !formData.name.trim() ||
+    !formData.email.trim() ||
+    !formData.message.trim()
+  ) {
+    setStatus("error");
+    setErrorMessage("Please fill out all fields.");
+    return;
+  }
 
-    setStatus("submitting");
+  setStatus("submitting");
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          access_key: key,
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          subject: `New Message from Portfolio Website (${formData.name})`
-        })
-      });
+  // Simulate sending
+  await new Promise((resolve) => setTimeout(resolve, 1200));
 
-      const result = await response.json();
-      if (result.success) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-        setErrorMessage(result.message || "Failed to send message. Please check your Access Key.");
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("error");
-      setErrorMessage("An unexpected error occurred. Please check your network connection.");
-    }
-  };
+  setFormData({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  setStatus("success");
+};
 
   return (
     <section className="py-xl px-8 md:px-20 bg-background" id="contact">

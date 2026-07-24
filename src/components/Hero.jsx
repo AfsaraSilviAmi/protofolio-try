@@ -86,7 +86,7 @@ export default function Hero() {
               View My Work
             </motion.a>
             <motion.a 
-              href="/Afsara_Silvi_Ami_Resume.pdf"
+              href="https://drive.google.com/file/d/13y4fD9olr0PhQotOBnW4pRhWYApYy2dA/view?usp=drive_link"
               download
               whileHover={{ scale: 1.05, y: -2, backgroundColor: "var(--card-bg)" }}
               whileTap={{ scale: 0.95 }}

@@ -1,5 +1,79 @@
 export const projects = [
   {
+  id: "aligntask",
+  title: "AlignTask - A Full-Stack Freelance Marketplace Platform",
+
+  description:
+    "AlignTask is a modern MERN stack freelance marketplace that connects clients with freelancers through a complete hiring workflow. Clients can post projects, review proposals, hire freelancers, and manage ongoing work, while freelancers can discover opportunities, submit proposals, and track their earnings through dedicated dashboards.",
+
+  image: "/aligntask.png",
+
+  techStack: [
+    "Next.js",
+    "React.js",
+    "Tailwind CSS",
+    "HeroUI",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "BetterAuth",
+    "JWT",
+    "Stripe"
+  ],
+
+  github: "https://github.com/AfsaraSilviAmi/AlignTask",
+
+  live: "https://align-task-ruby.vercel.app",
+
+  details:
+    "AlignTask is a full-stack freelance marketplace designed to simplify the hiring process for both clients and freelancers. The platform features secure authentication, role-based dashboards, task posting, proposal management, freelancer hiring, Stripe payment integration, project tracking, and administrative tools for managing users and platform activities. The application focuses on providing a clean, responsive, and intuitive experience while maintaining scalability and security.",
+
+  challenges:
+    "One of the biggest challenges was implementing a complete role-based system where clients, freelancers, and administrators each have different permissions and dashboards. Managing secure authentication with BetterAuth and JWT, integrating Stripe payments, handling proposal workflows, and designing scalable database relationships between users, tasks, proposals, and payments required careful planning. Maintaining a responsive UI while coordinating complex frontend and backend interactions was also a significant challenge.",
+
+  improvements:
+    "Future improvements include adding real-time notifications, in-app messaging between clients and freelancers, secure file uploads for project deliverables, email notifications, advanced analytics dashboards, and a review and rating system to enhance trust and collaboration across the platform."
+},
+{
+  id: "plantpal",
+  title: "PlantPal AI - An AI-Powered Plant Management Platform",
+
+  description:
+    "PlantPal AI is a full-stack web application that helps users discover, manage, and care for plants with the assistance of intelligent AI features. It combines modern web technologies with Agentic AI to deliver personalized plant recommendations and an interactive AI chat assistant.",
+
+  image: "/plantpal-thumbnail.png",
+
+  techStack: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "HeroUI",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Better Auth",
+    "JWT",
+    "Groq AI",
+    "Llama 3.3 70B"
+  ],
+
+  github: "https://github.com/AfsaraSilviAmi/PlantPal",
+
+  live: "https://plant-pal-ochre.vercel.app/",
+
+  details:
+    "PlantPal AI is a full-stack AI-powered plant management platform built with the MERN ecosystem and TypeScript. Users can browse plants, search and filter collections, manage their own plants through a personalized dashboard, and receive intelligent plant recommendations based on their experience, environment, and preferences. The platform also includes an AI-powered chat assistant capable of answering plant care questions, recommending suitable plants, and maintaining conversation history through real-time streaming responses.",
+
+  challenges:
+    "The biggest challenge was integrating AI into a real-world application while keeping responses relevant and personalized. Designing the recommendation engine required combining user preferences with plant data stored in MongoDB to generate context-aware recommendations. Implementing real-time streaming AI responses, managing conversation history, securing authentication with Better Auth and JWT, and coordinating communication between the frontend, backend, database, and Groq API also required careful system design.",
+
+  improvements:
+    "Future improvements include AI-powered plant disease detection using image recognition, weather-aware watering reminders, plant growth tracking, email notifications, favorites and wishlists, a dark mode option, and additional AI capabilities such as personalized care schedules and smart gardening insights."
+},
+  {
     id: "aimarena",
     title: "AimArena - A Full-Stack Sports Facility Booking Platform",
     description: "Aim Arena is a sports facility booking platform where users can easily discover, view, and book sports venues such as football fields, basketball courts, tennis courts, swimming pools, and more. Owners are able to add their own facilities and manage them. The goal of this project is to simplify sports facility management and make booking accessible, fast, and user-friendly. This system reflects a real-world sports reservation portal",
@@ -24,6 +98,43 @@ export const projects = [
 
     improvements: "Future improvements include integrating online payment systems for secure booking transactions, adding real-time booking availability and notifications, implementing advanced search and filtering options, and introducing ratings and reviews for facilities. Additional enhancements could include an admin dashboard for platform-wide management, booking history tracking, and a mobile application version for easier access on smartphones."
   },
+  {
+  id: "bookverse",
+
+  title: "BookVerse - A Full-Stack Book Management Platform",
+
+  description:
+    "BookVerse is a modern full-stack book management platform where users can explore books, build and manage their personal library, and discover popular genres and authors through a clean, responsive, and intuitive interface.",
+
+  image: "/bookverse-thumbnail.png",
+
+  techStack: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "HeroUI",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Better Auth",
+    "JWT"
+  ],
+
+  github: "https://github.com/AfsaraSilviAmi/BookVerse",
+
+  live: "https://book-verse-taupe.vercel.app/",
+
+  details:
+    "BookVerse is a full-stack web application designed for book enthusiasts to discover, organize, and manage their personal book collections. Users can browse all available books, search by title, filter by genre and price, sort results based on different criteria, and maintain their own library through a secure authentication system. The platform also highlights featured books, popular authors, and genre statistics while providing a smooth user experience with responsive layouts, loading skeletons, animations, and protected user actions.",
+
+  challenges:
+    "One of the biggest challenges was building efficient search, filtering, sorting, and pagination while maintaining good performance with a growing collection of books. Implementing secure authentication with Better Auth and JWT, ensuring users could only manage their own books, and keeping the frontend and backend synchronized through TypeScript required careful planning. Creating a responsive and polished user experience with animations and loading states also added to the project's complexity.",
+
+  improvements:
+    "Future improvements include allowing users to edit books, create wishlists, write reviews and comments, rate books, customize user profiles, add dark mode, build an administrator dashboard for content management, and implement an AI-powered recommendation system based on users' reading preferences."
+},
   {
     id: "project_1",
     title: "Tiles Gallery: A World of Hidden Aesthetics",

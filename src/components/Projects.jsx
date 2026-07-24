@@ -4,8 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
+import { useState } from "react";
 
 export default function Projects() {
+  const projectsPerPage = 6;
+
+const [currentPage, setCurrentPage] = useState(1);
+
+const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+const startIndex = (currentPage - 1) * projectsPerPage;
+const currentProjects = projects.slice(
+  startIndex,
+  startIndex + projectsPerPage
+);
   return (
     <section className="py-20 px-8 md:px-20 bg-background overflow-hidden" id="projects">
       <div className="max-w-screen-xl mx-auto">
@@ -20,7 +32,7 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -54,6 +66,39 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+        <div className="flex justify-center items-center gap-3 mt-12">
+  <button
+    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+    disabled={currentPage === 1}
+    className="px-4 py-2 rounded-lg border disabled:opacity-40 hover:bg-primary-container hover:text-white transition"
+  >
+    Previous
+  </button>
+
+  {Array.from({ length: totalPages }).map((_, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentPage(i + 1)}
+      className={`w-10 h-10 rounded-lg transition ${
+        currentPage === i + 1
+          ? "bg-primary-container text-white"
+          : "border hover:bg-gray-100 dark:hover:bg-gray-800"
+      }`}
+    >
+      {i + 1}
+    </button>
+  ))}
+
+  <button
+    onClick={() =>
+      setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+    }
+    disabled={currentPage === totalPages}
+    className="px-4 py-2 rounded-lg border disabled:opacity-40 hover:bg-primary-container hover:text-white transition"
+  >
+    Next
+  </button>
+</div>
       </div>
     </section>
   );

@@ -15,20 +15,41 @@ export default function AboutMe() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-h2 text-on-background dark:text-white mb-8">About Me</h2>
-            <div className="space-y-6 text-slate-600 dark:text-slate-300 text-body-md">
-              <p>
-  I am an aspiring web developer who is passionate about building modern, responsive, and user-friendly web applications. My journey started with curiosity about how websites work behind the scenes, and over time it has grown into a strong passion for full-stack development.
-</p>
-              <p>
-  I enjoy learning by building real projects and solving real-world problems. Some of my work includes a News Website, a Payoo payment system, and DigiTech. These projects helped me improve my skills in frontend design, backend logic, APIs, and database management.
-</p>
-              <div className="pt-6 border-t border-violet-100 dark:border-violet-900/30">
-                <h4 className="text-h3 mb-4 text-primary-container">Beyond the Code</h4>
-              <p>
-  Outside of programming, I enjoy exploring new technologies, improving my skills, and watching anime—especially sports and story-driven genres that keep me motivated. I also like learning Japanese listening and speaking, and spending time thinking about new project ideas.
-</p>
-              </div>
-            </div>
+           <div className="space-y-6 text-slate-600 dark:text-slate-300 text-body-md">
+  <p>
+    I am a passionate MERN Stack Developer who enjoys building modern,
+    responsive, and scalable web applications. I love turning ideas into
+    real-world solutions by creating clean user interfaces, developing robust
+    backend systems, and designing efficient databases. Every project I build
+    helps me grow as a developer while strengthening my problem-solving skills.
+  </p>
+
+  <p>
+    I have built several full-stack applications, including <strong>AlignTask</strong>,
+    a freelance marketplace with role-based dashboards and secure authentication;
+    <strong> AimArena</strong>, a sports venue booking platform; and
+    <strong> PlantPal AI</strong>, an AI-powered plant care assistant. Through
+    these projects, I have gained hands-on experience with React, Next.js,
+    Node.js, Express.js, MongoDB, authentication, REST APIs, and modern UI
+    development while following best practices for writing clean and
+    maintainable code.
+  </p>
+
+  <div className="pt-6 border-t border-violet-100 dark:border-violet-900/30">
+    <h4 className="text-h3 mb-4 text-primary-container">
+      Beyond the Code
+    </h4>
+
+    <p>
+      Beyond programming, I enjoy exploring new technologies, learning about
+      AI-powered applications, and continuously improving my development
+      skills. In my free time, I watch anime—especially sports and
+      story-driven series—and practice Japanese listening and speaking. I also
+      enjoy brainstorming new project ideas and challenging myself by building
+      applications that solve real-world problems.
+    </p>
+  </div>
+</div>
             
            
           </motion.div>
