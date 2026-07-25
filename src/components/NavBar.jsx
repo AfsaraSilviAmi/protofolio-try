@@ -10,6 +10,7 @@ export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const { theme, toggleTheme } = useTheme();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,17 +93,74 @@ export default function NavBar() {
           </span>
         </motion.button>
        
-        
+        {/* Mobile Menu Button */}
+<motion.button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  whileTap={{ scale: 0.9 }}
+  className={`md:hidden w-10 h-10 rounded-xl flex items-center justify-center ${
+    theme === "dark"
+      ? "bg-slate-800 text-white"
+      : "bg-violet-50 text-violet-700"
+  }`}
+>
+  <span className="material-symbols-outlined">
+    {mobileMenuOpen ? "close" : "menu"}
+  </span>
+</motion.button>
         
        
-        <motion.button 
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg text-label-caps hover:opacity-90 transition-all shadow-md"
-        >
-          Hire Me
-        </motion.button>
+       <Link href="#contact" className="hidden md:block">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg text-label-caps hover:opacity-90 transition-all shadow-md"
+  >
+    Hire Me
+  </motion.button>
+</Link>
       </div>
+      <AnimatePresence>
+  {mobileMenuOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.25 }}
+      className={`absolute top-20 left-0 w-full md:hidden ${
+        theme === "dark"
+          ? "bg-slate-900/95"
+          : "bg-white/95"
+      } backdrop-blur-xl border-t border-white/10 shadow-xl`}
+    >
+      <div className="flex flex-col py-4">
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            onClick={() => setMobileMenuOpen(false)}
+            className={`px-8 py-4 transition-colors ${
+              theme === "dark"
+                ? "text-slate-300 hover:bg-slate-800 hover:text-white"
+                : "text-slate-700 hover:bg-violet-50 hover:text-violet-600"
+            }`}
+          >
+            {link.name}
+          </Link>
+        ))}
+
+        <div className="px-8 pt-4">
+          <Link
+            href="#contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block w-full bg-primary-container text-on-primary-container text-center py-3 rounded-lg font-semibold"
+          >
+            Hire Me
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 }
